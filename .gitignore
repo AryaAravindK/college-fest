@@ -1,2 +1,20 @@
 node_modules/
 .env
+
+
+# Frontend build & dependencies
+/frontend/node_modules/
+/frontend/.next/
+/frontend/out/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+
+# Frontend logs
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# IDEs
+/frontend/.vscode/
