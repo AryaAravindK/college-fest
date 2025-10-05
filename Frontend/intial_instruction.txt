@@ -1,0 +1,1 @@
+use this directory to build the next.js frontend application 
