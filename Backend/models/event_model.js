@@ -212,6 +212,7 @@ eventSchema.methods.canViewPayments = function (user) {
   return false;
 };
 
+
 // Statics
 eventSchema.statics.findUpcomingEvents = function () {
   return this.find({ startDate: { $gte: new Date() }, status: { $in: ['published', 'ongoing'] } });
@@ -222,6 +223,32 @@ eventSchema.statics.findByCategory = function (category) {
 eventSchema.statics.findByOrganizer = function (userId) {
   return this.find({ organizer: userId });
 };
+
+eventSchema.statics.paginateUpcoming = async function (options = {}) {
+  const { page = 1, limit = 10, extraQuery = {} } = options;
+
+  const now = new Date();
+
+  const query = {
+    ...extraQuery
+  };
+
+  const total = await this.countDocuments(query);
+  const events = await this.find(query)
+    .sort({ startDate: 1 }) // Soonest events first
+    .skip((page - 1) * limit)
+    .limit(limit)
+    .exec();
+
+  return {
+    total,
+    page,
+    limit,
+    totalPages: Math.ceil(total / limit),
+    events
+  };
+};
+
 
 // Indexes & Plugins
 eventSchema.index({ title: 'text', description: 'text', tags: 'text' });

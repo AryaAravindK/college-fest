@@ -31,7 +31,7 @@ export default function EventsPage() {
     setIsLoading(true);
     try {
       const response = await eventsApi.getEvents(filters);
-      setEvents(response.docs);
+      setEvents(response.events);
       setTotalPages(response.totalPages);
     } catch (error: any) {
       showToast('error', 'Failed to fetch events');
@@ -132,7 +132,7 @@ export default function EventsPage() {
         <div className="flex items-center justify-center py-20">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
         </div>
-      ) : events.length === 0 ? (
+      ) : events.length === 0? (
         <Card>
           <CardContent className="py-12 text-center">
             <Calendar className="mx-auto h-12 w-12 text-gray-400 mb-4" />
@@ -166,7 +166,7 @@ export default function EventsPage() {
                         </span>
                       )}
                     </div>
-                    <CardTitle className="line-clamp-2">{event.title}</CardTitle>
+                    <CardTitle className="line-clamp-2">{event.name}</CardTitle>
                     <CardDescription className="line-clamp-2">
                       {event.description}
                     </CardDescription>
