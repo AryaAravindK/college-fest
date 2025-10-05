@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Calendar, Users, Trophy, ArrowRight } from 'lucide-react';
 import Button from '@/components/ui/Button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/Card';
+import "./globals.css";
 
 export default function Home() {
   const features = [

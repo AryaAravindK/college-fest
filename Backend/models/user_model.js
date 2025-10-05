@@ -63,7 +63,7 @@ const userSchema = new Schema(
     department: { type: String, ref: 'Lookup' },
     year: { type: Number, min: 1, max: 6 },
     rollNumber: { type: String, unique: true, sparse: true },
-    designation: { type: Schema.Types.ObjectId, ref: 'Lookup' },
+    designation: { type: String, ref: 'Lookup' },
 
     clubs: [{ type: Schema.Types.ObjectId, ref: 'Club' }],
     primaryClub: { type: Schema.Types.ObjectId, ref: 'Club' },

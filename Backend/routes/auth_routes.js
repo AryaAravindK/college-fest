@@ -5,7 +5,7 @@
 
 const express = require('express');
 const router = express.Router();
-const { register, login, logout, verifyEmail, requestPasswordReset, resetPassword, sendOtp, verifyOtp } = require('../controllers/auth_controller');
+const { register, login, logout, verifyEmail, requestPasswordReset, resetPassword, sendOtp, verifyOtp,getExistingClubs,createClub } = require('../controllers/auth_controller');
 const { registerValidator, loginValidator, emailVerificationValidator, passwordResetRequestValidator, passwordResetValidator, phoneOtpValidator } = require('../validators/auth_validator');
 const {protect} = require('../middlewares/auth_middleware');
 
@@ -32,5 +32,10 @@ router.post('/phone-otp', phoneOtpValidator, sendOtp);
 
 // Verify phone OTP
 router.post('/verify-otp', phoneOtpValidator, verifyOtp);
+
+
+// club routes
+router.get('/clubs', getExistingClubs);
+router.post('/create-club', createClub);
 
 module.exports = router;

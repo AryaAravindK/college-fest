@@ -61,6 +61,7 @@ export interface RegisterData {
   password: string;
   phone?: string;
   role?: UserRole;
+  department?: string;
 }
 
 export interface LoginResponse {

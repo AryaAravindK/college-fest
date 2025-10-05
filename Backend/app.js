@@ -24,6 +24,7 @@ if (process.env.NODE_ENV === 'development') {
 // ----------------------------
 const userRoutes = require('./routes/user_routes');
 const authRoutes = require('./routes/auth_routes');
+const clubRoutes = require('./routes/club_routes');
 const teamRoutes = require('./routes/team_routes');
 const resultRoutes = require('./routes/result_routes');
 const registrationRoutes = require('./routes/registration_routes');
@@ -37,6 +38,7 @@ const dashboardRoutes = require('./routes/dashboard_routes');
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/club', clubRoutes);
 app.use('/api/teams', teamRoutes);
 app.use('/api/results', resultRoutes);
 app.use('/api/registrations', registrationRoutes);
