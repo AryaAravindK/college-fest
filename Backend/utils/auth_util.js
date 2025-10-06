@@ -50,9 +50,9 @@ const sendVerificationEmail = async (user) => {
   const url = `${BACKEND_URL}/api/auth/verify-email?token=${token}`;
 
 await transporter.sendMail({
-  from: `"Sahara College" <${process.env.EMAIL_USER}>`,
+  from: `"Surana College" <${process.env.EMAIL_USER}>`,
   to: user.email,
-  subject: 'Verify Your Sahara College Email',
+  subject: 'Verify Your Surana College Email',
   html: `
     <div style="font-family: Arial, sans-serif; background-color: #f7f7f7; padding: 20px;">
       <div style="max-width: 600px; margin: auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">

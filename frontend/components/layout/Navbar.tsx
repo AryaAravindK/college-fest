@@ -75,7 +75,7 @@ const Navbar = () => {
                 </div>
               </div>
               <span className="text-2xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                CollegeFest
+                Surana Fest
               </span>
               <Sparkles className="h-5 w-5 text-yellow-500 animate-pulse" />
             </Link>

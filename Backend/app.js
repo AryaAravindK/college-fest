@@ -34,7 +34,11 @@ const feedbackRoutes = require('./routes/feedback_routes');
 const eventRoutes = require('./routes/event_routes');
 const certificateRoutes = require('./routes/certificate_routes');
 const announcementRoutes = require('./routes/announcement_routes');
+const eventAnnouncementRoutes = require('./routes/announcement_routes');
+const eventRegistrationRoutes = require('./routes/registration_routes');
+const eventResultRoutes = require('./routes/result_routes');
 const dashboardRoutes = require('./routes/dashboard_routes');
+const sponsorRoutes = require('./routes/sponsor_routes');
 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
@@ -49,6 +53,11 @@ app.use('/api/events', eventRoutes);
 app.use('/api/certificates', certificateRoutes);
 app.use('/api/announcements', announcementRoutes);
 app.use('/api/dashboards', dashboardRoutes);
+// Event-level endpoints
+app.use('/api', eventAnnouncementRoutes);
+app.use('/api', eventRegistrationRoutes);
+app.use('/api', eventResultRoutes);
+app.use('/api/sponsors', sponsorRoutes);
 
 // ----------------------------
 // HEALTH CHECK

@@ -224,6 +224,20 @@ async function batchUpdateCertificates(req, res, next) {
   }
 }
 
+async function getAllCertificates (req,res,next){
+  try{
+      const certificate = await certificat.find();
+      res.status(200).json(
+        {
+          message:"certificated fetched sucessfully",
+          data: certificate
+      });
+  }catch(err){
+    throw err;
+
+  }
+}
+
 /* -------------------------
    Export Controller
 ------------------------- */
@@ -238,5 +252,7 @@ module.exports = {
   getCertificateById,
   getCertificatesByStudent,
   getCertificatesByEvent,
-  batchUpdateCertificates
+  batchUpdateCertificates,
+  getAllCertificates
+
 };

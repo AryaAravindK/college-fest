@@ -190,16 +190,17 @@ export default function RegisterPage() {
                     type="text"
                     name="firstName"
                     label="First Name"
-                    placeholder="John"
+                    placeholder="Your name"
                     value={formData.firstName}
                     onChange={handleChange}
                     required
+                    
                   />
                   <Input
                     type="text"
                     name="lastName"
                     label="Last Name"
-                    placeholder="Doe"
+                    placeholder="last name"
                     value={formData.lastName}
                     onChange={handleChange}
                   />
@@ -209,7 +210,7 @@ export default function RegisterPage() {
                   type="email"
                   name="email"
                   label="Email Address"
-                  placeholder="your.email@example.com"
+                  placeholder="email@gmail.com"
                   value={formData.email}
                   onChange={handleChange}
                   required

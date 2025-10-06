@@ -125,7 +125,7 @@ router.delete(
  */
 router.get(
   "/:certificateId",
-  authMiddleware.protect,
+  // authMiddleware.protect,
   certificateMiddleware.loadCertificate,
   certificateMiddleware.filterDeleted,
   (req, res, next) => {
@@ -184,6 +184,12 @@ router.post(
   roleMiddleware(['Organizer','Faculty','Admin']),
   certificateController.batchUpdateCertificates
 );
+
+
+router.get(
+  "getAllCertificates",
+  certificateController.getAllCertificates
+)
 
 /* -------------------------
    Export Router

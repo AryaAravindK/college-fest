@@ -23,7 +23,7 @@ async function loadCertificate(req, res, next) {
     const certId = req.params.certificateId || req.body.certificateId;
     if (!certId) return res.status(400).json({ error: "certificateId is required" });
 
-    const certificate = await Certificate.findByCertificateId(certId);
+    const certificate = await Certificate.find({_id:certId});
     if (!certificate) return res.status(404).json({ error: "Certificate not found" });
 
     req.certificate = certificate;
