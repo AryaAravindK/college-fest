@@ -314,7 +314,7 @@ export default function DashboardPage() {
               </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <Link href="/events">
+              <Link href="/organizer/dashboard">
                 <div className="bg-white/10 backdrop-blur-md hover:bg-white/20 rounded-xl p-6 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer group">
                   <Calendar className="h-8 w-8 mb-3 group-hover:scale-110 transition-transform" />
                   <h3 className="font-bold text-lg mb-1">Event Management</h3>
